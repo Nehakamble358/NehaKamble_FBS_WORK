@@ -1,8 +1,21 @@
-// 3 sum of number is given range find sum of number from start to end  Input start =1,end=5
-#include<stdio.h>
-void main(){
-	int i = 1;
-	while(i<=15)
-	printf("%d\n");
-	i++;
+//3.print perfect number in the given range 1 to n
+# include<stdio.h>
+void main()
+{
+	int number, rem, sum=0, i;
+	printf("Enter a Number :");
+	scanf("%d",&number);
+	for(i=1; i <=(number -1); i++)
+	{
+		rem = number % i;
+		if(rem == 0)
+		{
+			sum = sum + i;
+		}
+	}
+	if(sum == number)
+	printf("%d is perfect number",number);
+	else
+	printf("%d is not a perfect number",number);
 }
+	

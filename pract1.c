@@ -1,10 +1,30 @@
-//print number from  1 to 10
+//1 print armstrong in the given range 1 to n.
 #include<stdio.h>
-void main()
-{
-	int i=1;
-	while(i<=10){
-	printf("%d\n",i);
-	i++;
-}
+void main() {
+	int no;
+	printf("Enter a number : ");
+	scanf("%d",&no);
+	int temp=no;
+	int count=0;
+    {
+	count++;
+	no=no/10;
+    }
+	no=temp;
+	int sum=0,rem;
+	int res=1;
+	while(no>0) 
+	{
+		rem=no%10;
+		for(int i=1; i<=count; i++)
+			res=res*rem;
+
+		sum=sum+res;
+		no=no/10;
+	}
+         if(sum ==temp)
+			printf("%d is a armstrong",temp);
+		else
+			printf("%d is not a armstrong",temp);
+    
 }

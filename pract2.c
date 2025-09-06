@@ -1,13 +1,16 @@
-// 2 print table for given number. Input = 5
+//2 print prime number in the given range 1 to n
 #include<stdio.h>
 void main()
 {
-   int i=1;
-   int number = 5;
-   while(i<=10)
-   {
-   	printf("%d x %d = %d\n",number, i, number*number);
-   	i++;
-   }
-   return 0;
+	int no;
+	printf("Enter a number : ");
+	scanf("%d",&no);
+	if(no%2==0)
+	{
+		printf("is a prime number");
+    }else
+    {
+    	printf("is not a prime number");
+	}
+
 }

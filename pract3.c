@@ -1,13 +1,11 @@
-//3.Find sum of all numbers.
+//strncpy()
 #include<stdio.h>
+#include<string.h>
 void main()
 {
-	int arr[] ={10,20,30,40,50};
-	int n =sizeof(arr)/ sizeof (arr[0]);
-	int sum = 0;
+	char src[] = "fistbit";
+	char dest[20];
 	
-	for(int i=0; i<n; i++){
-	sum += arr[i];
-    }
-    printf("sum of all numbers:%d\n",sum);
+	strncpy(dest,src,4);
+	printf("%s",dest);
 }

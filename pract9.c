@@ -1,16 +1,13 @@
-// 9.Reverse the given array.
+//9 strstr()
 #include<stdio.h>
+#include<string.h>
 void main()
 {
-     int a[5];
-     printf("Enter a array element :");
-     for( int i=0; i<5; i++)
-     {
-     	scanf("%d",&a[i]);
-	 }
-	 printf("Revers array element :");
-     for(int i=4; i>=0; i--)
-     {
-     	printf("%d ",a[i]);
-	 }
+	char s[] = "Neha, kamble!";
+	char *pos = strstr(s,"kamble");
+	
+	if(pos != NULL)
+	printf("Found");
+	else
+	printf("Not Found");
 }

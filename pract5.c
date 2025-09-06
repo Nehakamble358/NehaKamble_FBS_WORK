@@ -1,15 +1,11 @@
-// 5. print alternate element in array.
+//5. strncat()
 #include<stdio.h>
+#include<string.h>
 void main()
 {
-	int a[10],i;
-	printf("Enetr elements :");
-	for(i=0; i<10; i++)
-	{
-		scanf("%d",&a[i]);
-	}
-	printf("\n alternate number");
-	for(i=0; i<10; i=i+1){
-		printf("%d ",a[i]);
-	}
+	char s1[40] = "Hello, ";
+	char s2[] = "world";
+	
+	strncat(s1,s2, 4);
+	printf("%s",s1);
 }

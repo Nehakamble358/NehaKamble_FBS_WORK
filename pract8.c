@@ -1,27 +1,21 @@
-// 8 check the given number is strong number or not input:145 output: Strong
+//8. print a pattern of stars in diamond slape input: n=4
 #include<stdio.h>
-void main(){
-	int no,fact,sum,i;
-	printf("Enter a number : ");
-	scanf("%d",&no);
-	int temp = no;
-	while(no>0)
-	{
-		int rem=no%10;
-		sum=sum+fact;
+void main()
+{
+	int n,i,j;
+	
+	printf("Enter number of rows:");
+	scanf("%d",&n);
+	
+	for(i=1; i<=n; i++){
+		for(j=1; j<=i; j++)
+		printf("*");
+		printf("\n");
 	}
-	while(no>0)
-	{
-		int rem=no%10;
-		int fact=1;
-		for(i=1; i<=rem; i++)
-		fact = fact*i;
-		sum = sum+fact;
-		no=no%10;
+	for(i=n-1; i>=1; i--){
+		for(j=1; j<=i; j++)
+		printf("*");
+		printf("\n");
 	}
-	if(sum == temp)
-	printf("%d is strong",temp);
-	else
-	printf("%d is not strong",temp);
-	return 0;
 }
+	

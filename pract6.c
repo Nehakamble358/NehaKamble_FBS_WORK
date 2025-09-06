@@ -1,17 +1,22 @@
-//6. Write  a program to check whether a given character is uppercase or lowercase.
+//6 check the given number is perfect number or not;
 #include<stdio.h>
-void main()
+int main()
 {
-	char c;
-	printf("Enter a character number: ");
-	scanf("%c",&c);
 	
-	if(c>='A' && c<='Z')
-	{
-		printf("it is uppercase character");
-	}else
-	{
-		printf("it is lowercase character");
-	}
-	return 0;
+    int num,sum = 0;
+    printf("Enter a number :");
+    scanf("%d",&num);
+    
+	for(int i=1; i<num; i++){
+
+	if(num % i == 0)
+	sum = sum + i;
 }
+	
+if(sum == num)
+		printf("%d is a perfect number\n",num);
+	else
+		printf("%d is not a perfect number\n",num);
+}
+	
+	

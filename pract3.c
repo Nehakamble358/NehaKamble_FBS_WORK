@@ -1,21 +1,8 @@
-//3 Write a program to check whether a given year is a leap year
+// 3 sum of number is given range find sum of number from start to end  Input start =1,end=5
 #include<stdio.h>
-void main()
-{
-	int year;
-	printf("Enter a year : ");
-	scanf("%d",&year);
-	
-	if(year % 400 == 0){
-		printf("%d is a leap year.",year);
-	}
-	else if(year % 100 == 0){
-	printf("%d is a leap year.",year);
-}
-else if(year % 4 == 0){
-printf("%d is a leap year.",year);
-}
-else{
-	printf("%d is not a leap year.",year);
-}
+void main(){
+	int i = 1;
+	while(i<=15)
+	printf("%d\n");
+	i++;
 }

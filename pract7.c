@@ -1,29 +1,18 @@
-//7. Write Calculating total salary based on basic on basic <=5000 da, ta and hra will be 10%,20% and 25% respectively 
-//otherwisw da, ta, and hra will be 15%25% and 30% respectively,
+//7 find factorial of given number. input:n=5 outpt:120
 #include<stdio.h>
-void main()
-{
-	float basic_salary,da, ta, hra, total_salary;
-	printf("Enter the basic salary:");
-	scanf("%f",&basic_salary);
+void main(){
+	int num,i;
+	long long factorial=1;
 	
-	if(basic_salary <= 5000){
-		da = 0.10 * basic_salary;
-		ta = 0.20 * basic_salary;
-		hra = 0.25 * basic_salary;
-	}else{
-		da = 0.15 * basic_salary;
-		ta = 0.25 * basic_salary;
-		hra = 0.30 *basic_salary;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	
+	if(num<0){
+	printf(" Factorial is not defined for negative numbers.\n");
+    }else{
+    	for(i=1; i<num;i++){
+    		factorial = factorial*i;
+		}
+		printf("Factorial of %d = %lld\n",num, factorial);
 	}
-	total_salary = basic_salary +da + ta + hra;
-	
-	printf("\nBasic salary : %2f\n",basic_salary);
-	printf("DA: %.2f\n", da);
-	printf("TA: %.2f\n", ta);
-	printf("HRA: %.2f\n", hra);
-	printf("Total salary: %.2f\n",total_salary);
-	return 0;
-	
-	
 }

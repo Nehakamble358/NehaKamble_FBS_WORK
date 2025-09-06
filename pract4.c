@@ -1,14 +1,15 @@
-// 4. Write a Program to check whether a given character is a vowel or consonant.
+//4 check the given number is prime or not Input: n=7 output: prime
 #include<stdio.h>
-void main() {
-	char ch;
-	printf("Enter a character:");
-	scanf("%c",&ch);
-
-	if(ch == 'a' || ch == 'e' || ch == 'i'|| ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == '0' || ch == 'U'){
-	printf("%c is a vowel.",ch);
-    }else {
-	printf("%c is a consonant.",ch);
-    }
-return 0;
+void main()
+{
+	int no;
+	printf("Enter a number : ");
+	scanf("%d",&no);
+	if(no%2==0)
+	{
+		printf("is a prime number");
+	}else
+	{
+		printf("is not a prime number");
+	}
 }

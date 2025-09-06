@@ -1,15 +1,10 @@
-
-// 1 write a program to check whether a number is even or add.
+//print number from  1 to 10
 #include<stdio.h>
 void main()
 {
-	int num;
-	printf("Enter an integer:");
-	scanf("%d",&num);
-	 
-	 if(num % 2 ==0)
-	 printf("%d is even.",num);
-	 else
-	 printf("%d is odd.",num);
+	int i=1;
+	while(i<=10){
+	printf("%d\n",i);
+	i++;
 }
-	
+}

@@ -1,21 +1,13 @@
-//2 Write a program to check given 3 digit number is pallindrome or not. //1221
+// 2 print table for given number. Input = 5
 #include<stdio.h>
 void main()
 {
-	int num, original,reversed =0,digit;
-    printf("Enter a three-digit number :");
-    scanf("%d", &num);
-    original = num;
-   
-    while(num>0)
-    {
-    digit = num % 10;
-    reversed = reversed * 10 + digit;
-    num=num/10;
+   int i=1;
+   int number = 5;
+   while(i<=10)
+   {
+   	printf("%d x %d = %d\n",number, i, number*number);
+   	i++;
    }
-   if(original == reversed)
-   printf("%d is a palindrome.",original);
-   else
-   printf("%d is not pallindrom.",original);
    return 0;
 }

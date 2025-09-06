@@ -1,30 +1,21 @@
-//1 print armstrong in the given range 1 to n.
 #include<stdio.h>
-void main() {
-	int no;
-	printf("Enter a number : ");
-	scanf("%d",&no);
-	int temp=no;
-	int count=0;
-    {
-	count++;
-	no=no/10;
-    }
-	no=temp;
-	int sum=0,rem;
-	int res=1;
-	while(no>0) 
+#include<stdlib.h>
+void main()
+{
+	int i,max,min,a[5];
+	printf("Enter array element :");
+	for( int i=0; i<5; i++)
 	{
-		rem=no%10;
-		for(int i=1; i<=count; i++)
-			res=res*rem;
-
-		sum=sum+res;
-		no=no/10;
+		scanf("%d",&a[i]);
 	}
-         if(sum ==temp)
-			printf("%d is a armstrong",temp);
-		else
-			printf("%d is not a armstrong",temp);
-    
+	max=min = a[0];
+	for(i=1; i<5; i++)
+	{
+		if(a[i]>max)
+		max=a[i];
+		if(a[i]<min)
+		min=a[i];
+	}
+	printf("Maximum Number is : %d\n",max);
+	printf("Minimum Number is : %d\n",min);
 }

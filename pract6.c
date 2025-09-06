@@ -1,22 +1,17 @@
-//6 check the given number is perfect number or not;
+//6.Accept array and print only prime numbers of arrya
 #include<stdio.h>
-int main()
+void main()
 {
-	
-    int num,sum = 0;
-    printf("Enter a number :");
-    scanf("%d",&num);
-    
-	for(int i=1; i<num; i++){
-
-	if(num % i == 0)
-	sum = sum + i;
+	int arr[5],size,i,flag ;
+	printf("Enter a prime number : ");
+	for(int i=0; i<size; i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	 printf("is a prime number");
+     for(int i=0; i<size; i++)
+	 {
+	     if(flag == 0)
+		 printf("%d",arr[i]);
+     }	
 }
-	
-if(sum == num)
-		printf("%d is a perfect number\n",num);
-	else
-		printf("%d is not a perfect number\n",num);
-}
-	
-	

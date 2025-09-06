@@ -1,21 +1,13 @@
-//3.print perfect number in the given range 1 to n
-# include<stdio.h>
+//3.Find sum of all numbers.
+#include<stdio.h>
 void main()
 {
-	int number, rem, sum=0, i;
-	printf("Enter a Number :");
-	scanf("%d",&number);
-	for(i=1; i <=(number -1); i++)
-	{
-		rem = number % i;
-		if(rem == 0)
-		{
-			sum = sum + i;
-		}
-	}
-	if(sum == number)
-	printf("%d is perfect number",number);
-	else
-	printf("%d is not a perfect number",number);
-}
+	int arr[] ={10,20,30,40,50};
+	int n =sizeof(arr)/ sizeof (arr[0]);
+	int sum = 0;
 	
+	for(int i=0; i<n; i++){
+	sum += arr[i];
+    }
+    printf("sum of all numbers:%d\n",sum);
+}

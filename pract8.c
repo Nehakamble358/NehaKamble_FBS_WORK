@@ -1,21 +1,22 @@
-//8. print a pattern of stars in diamond slape input: n=4
+// 8. Merge two array.
 #include<stdio.h>
 void main()
 {
-	int n,i,j;
-	
-	printf("Enter number of rows:");
-	scanf("%d",&n);
-	
-	for(i=1; i<=n; i++){
-		for(j=1; j<=i; j++)
-		printf("*");
-		printf("\n");
+	int arr[5]={10,20,30,40,50};
+	int brr[5]={60,70,80,90,100};
+	int crr[5+5],i;
+	for(int i=0; i<5; i++)
+	{
+		crr[i]=arr[i];
 	}
-	for(i=n-1; i>=1; i--){
-		for(j=1; j<=i; j++)
-		printf("*");
-		printf("\n");
+	for(int j=0; j<5; j++)
+	{
+		crr[i] = brr[j];
+		i++;
 	}
+	for(int i=0; i<10; i++)
+	{
+		printf("%d ",crr[i]);
+	}
+		
 }
-	

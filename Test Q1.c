@@ -1,20 +1,19 @@
-//1. Write a program to print factors of in given range.
+//1.Write a program in c for, to find common elements in two arrays.
 #include<stdio.h>
 void main()
 {
-	int start,end,i,j;
-	printf("Enetr start and end range:");
-	scanf("%d %d",&start,&end);
-	
-	for(i=start; i<=end; i++){
-	printf("%d =",i);
-	for(j=1; j<=i; j++)
-	if(i%j==0){
-     printf("%d",j);
- }
- printf("\n"); 
-}
-	
-	
-
+   int arr[]={1,2,3,4,5};
+   int brr[]={1,6,7,3,2};
+   int nl = 5,n2=5;
+   int i,j;
+   
+   printf("Common elements :");
+   for(i=0; i<nl; i++)
+   for(j=0; j<n2; j++)
+   {
+   	if(arr[i]==brr[j])
+   	{
+   		printf("%d",arr[i]);
+   	}
+   }
 }

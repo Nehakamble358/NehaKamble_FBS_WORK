@@ -1,16 +1,17 @@
-//2 WAP to add altemate numbers from given range.
+//2 Write a program to find power of any number eg.2^4=16.
 #include<stdio.h>
 void main()
 {
-	int start,end,i,sum=0;
+	int base,exp,i;
+	int result=1;
 	
-	printf("Enter start :");
-	scanf("%d",&start);
+	printf("Enter base:");
+	scanf("%d",&base);
+	printf("Enter exponent::");
+	scanf("%d",&exp);
 	
-	printf("Enter end :");
-	scanf("%d",&end);
-	for(i=start; i<=end; i+=2){
-		sum+=i;
-	}
-	printf("sum = %d\n",sum);
+	for(i=1;i<=exp;i++){
+	result *= base;
+    }
+    printf("%d^%d = %d\n",base,exp,result);
 }

@@ -1,23 +1,20 @@
-// 1 WAP print even and odd number in a givenm range.
-
+//1. Write a program to print factors of in given range.
 #include<stdio.h>
 void main()
 {
-	int start,end,i;
-	printf("Enter start:");
-	scanf("%d",&start);
+	int start,end,i,j;
+	printf("Enetr start and end range:");
+	scanf("%d %d",&start,&end);
 	
-	printf("Enter end:");
-	scanf("%d",&end);
+	for(i=start; i<=end; i++){
+	printf("%d =",i);
+	for(j=1; j<=i; j++)
+	if(i%j==0){
+     printf("%d",j);
+ }
+ printf("\n"); 
+}
 	
-	printf("Odd numbers:");
-	for(i=start;i<=end; i++){
-	if(i%2!=0)
-	printf("%d",i);
-}
-	printf("\nEven numbers:");
-	for(i=start;i<=end; i++){
-	if(i%2 == 0)
-	printf("%d",i);
-}
+	
+
 }

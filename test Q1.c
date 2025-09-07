@@ -1,17 +1,15 @@
-//convert the time enterd in hh,min and sec into total seconds.
+// 1 WAP to calculate selling price of book based on cost price and discount.(using function and nested if-else)
 #include<stdio.h>
+void fun();
 void main()
 {
-	int hh,min,sec,total;
-	printf("Enter a hours:");
-	scanf("%d",&hh);
+	int no=500;
+	printf("Enter a selling price of book : ");
+	scanf("%d",&no);
+	if(no>=200){
+		printf("it is a cost price",no);
+	}else if(no%=2){
+		printf("Discount",no);
+	}
 	
-	printf("Enter a minutes:");
-	scanf("%d",&min);
-	
-	printf("Enter a second:");
-	scanf("%d",&sec);
-	
-	total = (hh*3600)+(min*60)+sec;
-	printf("Total second = %d\n",total);
 }

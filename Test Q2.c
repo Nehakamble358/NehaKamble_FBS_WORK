@@ -1,34 +1,28 @@
-//2 Write a program in C to find two maximum number in array?
-#include <stdio.h>
+//check if the array is palindrome or not
+#include<stdio.h>
+void main()
+ {
+    int n, i, flag = 1;
 
-int main() {
-    int n, i;
-    printf("Enter the size of array: ");
-    scanf("%d",&n);
+    printf("Enter size of array: ");
+    scanf("%d", &n);
 
-    int arr[n];
-	printf("Enter elements:");
-	scanf("%d",&n);
-    for (i = 0; i < n; i++) {
+    int arr[n];   // array of size n
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
-    int max1, max2;
-	if (arr[0] > arr[1]) {
-        max1 = arr[0];
-        max2 = arr[1];
-    } else {
-        max1 = arr[1];
-        max2 = arr[0];
-    }
-    for (i = 2; i < n; i++) {
-        if (arr[i] > max1) {
-            max2 = max1;
-            max1 = arr[i];
-        } else if (arr[i] > max2 && arr[i] != max1) {
-            max2 = arr[i];
+
+    for(i = 0; i < n/2; i++) {
+        if(arr[i] != arr[n-i-1]) {
+            flag = 0;
+            break;
         }
     }
-	printf("First maximum = %d\n", max1);
-    printf("Second maximum = %d\n", max2);
+    
+	if(flag == 1)
+        printf("Array is Palindrome\n");
+    else
+        printf("Array is Not Palindrome\n");
 }
-

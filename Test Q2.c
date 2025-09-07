@@ -1,16 +1,16 @@
-//WAP to check if number is positive,negative or neutral(0).
+//2 WAP to add altemate numbers from given range.
 #include<stdio.h>
 void main()
 {
-	int num;
+	int start,end,i,sum=0;
 	
-	printf("Enter a number:");
-	scanf("%d",&num);
+	printf("Enter start :");
+	scanf("%d",&start);
 	
-	if(num>0)
-	printf("The number is positive:\n");
-	else if(num<0)
-	printf("The number is negative.\n");
-	else
-    printf("The number is natural(Zero).\n");
+	printf("Enter end :");
+	scanf("%d",&end);
+	for(i=start; i<=end; i+=2){
+		sum+=i;
+	}
+	printf("sum = %d\n",sum);
 }

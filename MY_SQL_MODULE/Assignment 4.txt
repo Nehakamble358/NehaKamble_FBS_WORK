@@ -1,0 +1,191 @@
+                                                           ASSIGNMENT-3
+Q1. Write a SQL statement to insert a record as follows:
+Employees :
+mysql> insert into employee
+    -> values(103,"Alexander","Hunold","AHUNOLD",5094567,"1987-06-20",4,9000.00,0.00,103,60),
+    -> (104,"Bruce","Ernst","BERNST",5094568,"1987-06-21",5,9000.00,0.00,103,60),
+    -> (105,"David","Austin","DAUSTIN",5904569,"1987-06-22",6,4800.00,0.00,103,60),
+    -> (106,"Valli","Pataballa","VPATABAL",5904560,"1987-06-23",7,4800.00,0.00,103,60),
+    -> (107,"Diana","Lorentz","DLORENTZ",5904567,"1987-06-24",8,4200.00,0.00,114,30),
+    -> (108,"Nancy","Greenberg","NGREENBE",5154569,"1987-06-25",9,12000.00,0.00,145,80),
+    -> (109,"Daniel","Faviet","DFAVIET",5154569,"1987-06-26",10,9000.00,0.00,145,80);
+Query OK, 7 rows affected (0.01 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> table employee;
++-------------+------------+-----------+-----------+--------------+------------+--------+----------+----------------+------------+---------------+
+| Employee_id | First_name | Last_name | Email     | Phone_number | Hire_date  | job_id | Salary   | commission_pct | Manager_id | department_id |
++-------------+------------+-----------+-----------+--------------+------------+--------+----------+----------------+------------+---------------+
+|         100 | Steveen    | king      | SKING;    |      5154567 | 1987-06-17 |      1 | 24000.00 |           0.00 |        200 |            10 |
+|         101 | Neena      | Kochhar   | NKOCHHAR; |     12345678 | 1987-06-18 |      2 | 17000.00 |           0.00 |        200 |            10 |
+|         102 | Lex        | De Haan   | LDEHAAN   |      5154568 | 1987-06-19 |      3 | 17000.00 |           0.00 |        200 |            10 |
+|         103 | Alexander  | Hunold    | AHUNOLD   |      5094567 | 1987-06-20 |      4 |  9000.00 |           0.00 |        103 |            60 |
+|         104 | Bruce      | Ernst     | BERNST    |      5094568 | 1987-06-21 |      5 |  9000.00 |           0.00 |        103 |            60 |
+|         105 | David      | Austin    | DAUSTIN   |      5904569 | 1987-06-22 |      6 |  4800.00 |           0.00 |        103 |            60 |
+|         106 | Valli      | Pataballa | VPATABAL  |      5904560 | 1987-06-23 |      7 |  4800.00 |           0.00 |        103 |            60 |
+|         107 | Diana      | Lorentz   | DLORENTZ  |      5904567 | 1987-06-24 |      8 |  4200.00 |           0.00 |        114 |            30 |
+|         108 | Nancy      | Greenberg | NGREENBE  |      5154569 | 1987-06-25 |      9 | 12000.00 |           0.00 |        145 |            80 |
+|         109 | Daniel     | Faviet    | DFAVIET   |      5154569 | 1987-06-26 |     10 |  9000.00 |           0.00 |        145 |            80 |
++-------------+------------+-----------+-----------+--------------+------------+--------+----------+----------------+------------+---------------+
+
+Q2. Write a SQL statement to insert 3 rows by a single insert statement.
+
+mysql> create table department
+    -> (Department_id int,Department_name varchar(20),Manager_id int,Location_id int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc department;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| Department_id   | int         | YES  |     | NULL    |       |
+| Department_name | varchar(20) | YES  |     | NULL    |       |
+| Manager_id      | int         | YES  |     | NULL    |       |
+| Location_id     | int         | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+mysql> insert into department
+    -> values(20,"Marketing",201,1800),
+    -> (30,"Purchasing",114,1700),
+    -> (40,"Human Resources",203,2400),
+    -> (50,"shipping",121,1500),
+    -> (60,"IT",103,2700),
+    -> (70,"Sales",145,2500);
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> table department;
++---------------+-----------------+------------+-------------+
+| Department_id | Department_name | Manager_id | Location_id |
++---------------+-----------------+------------+-------------+
+|            10 | Administration  |        200 |        1700 |
+|            20 | Marketing       |        201 |        1800 |
+|            30 | Purchasing      |        114 |        1700 |
+|            40 | Human Resources |        203 |        2400 |
+|            50 | shipping        |        121 |        1500 |
+|            60 | IT              |        103 |        2700 |
+|            70 | Sales           |        145 |        2500 |
++---------------+-----------------+------------+-------------+
+
+Q3. Write a SQL statement to insert one row in jobs table to ensure that no duplicate
+value will be entered in the job_id column.
+
+
+mysql> create table job
+    -> (JOB_ID int,JOB_TITLE varchar(20),NULL_SALARY int,MAX_SALARY int);
+Query OK, 0 rows affected (0.04 sec)
+mysql> desc job;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| JOB_ID      | int         | YES  |     | NULL    |       |
+| JOB_TITLE   | varchar(20) | YES  |     | NULL    |       |
+| NULL_SALARY | int         | YES  |     | NULL    |       |
+| MAX_SALARY  | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+mysql> insert into job
+    -> values("AD_VP","Administration vice president",15000,30000),
+    -> ("AD_ASST","Administration Assistance",3000,6000),
+    -> ("FI_MGR","Finance Manager",82000,16000),
+    -> ("FI_ACCOUNT","Accountant",42000,9000),
+    -> ("AC_MGR","Accounting Manager",82000,16000),
+    -> ("AC_ACCOUNT","Police Accountant",42000,9000),
+    -> ("SA_MAN","Sales Manager",10000,20000);
+Query OK, 7 rows affected (0.01 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> table job;
++------------+-------------------------------+-------------+------------+
+| JOB_ID     | JOB_TITLE                     | NULL_SALARY | MAX_SALARY |
++------------+-------------------------------+-------------+------------+
+| AD_PRES    | President                     |       20000 |      40000 |
+| AD_VP      | Administration vice president |       15000 |      30000 |
+| AD_ASST    | Administration Assistance     |        3000 |       6000 |
+| FI_MGR     | Finance Manager               |       82000 |      16000 |
+| FI_ACCOUNT | Accountant                    |       42000 |       9000 |
+| AC_MGR     | Accounting Manager            |       82000 |      16000 |
+| AC_ACCOUNT | Police Accountant             |       42000 |       9000 |
+| SA_MAN     | Sales Manager                 |       10000 |      20000 |
++------------+-------------------------------+-------------+------------+
+
+Q4 Write SQL statement to increment salary of each emp by 10%.
+
+      update employee set salary=salary*1.10;
+Query OK, 10 rows affected (0.01 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> table employee;
++-------------+------------+-----------+-----------+--------------+------------+--------+----------+----------------+------------+---------------+
+| Employee_id | First_name | Last_name | Email     | Phone_number | Hire_date  | job_id | Salary   | commission_pct | Manager_id | department_id |
++-------------+------------+-----------+-----------+--------------+------------+--------+----------+----------------+------------+---------------+
+|         100 | Steveen    | king      | SKING;    |      5154567 | 1987-06-17 |      1 | 26400.00 |           0.00 |        200 |            10 |
+|         101 | Neena      | Kochhar   | NKOCHHAR; |     12345678 | 1987-06-18 |      2 | 18700.00 |           0.00 |        200 |            10 |
+|         102 | Lex        | De Haan   | LDEHAAN   |      5154568 | 1987-06-19 |      3 | 18700.00 |           0.00 |        200 |            10 |
+|         103 | Alexander  | Hunold    | AHUNOLD   |      5094567 | 1987-06-20 |      4 |  9900.00 |           0.00 |        103 |            60 |
+|         104 | Bruce      | Ernst     | BERNST    |      5094568 | 1987-06-21 |      5 |  9900.00 |           0.00 |        103 |            60 |
+|         105 | David      | Austin    | DAUSTIN   |      5904569 | 1987-06-22 |      6 |  5280.00 |           0.00 |        103 |            60 |
+|         106 | Valli      | Pataballa | VPATABAL  |      5904560 | 1987-06-23 |      7 |  5280.00 |           0.00 |        103 |            60 |
+|         107 | Diana      | Lorentz   | DLORENTZ  |      5904567 | 1987-06-24 |      8 |  4620.00 |           0.00 |        114 |            30 |
+|         108 | Nancy      | Greenberg | NGREENBE  |      5154569 | 1987-06-25 |      9 | 13200.00 |           0.00 |        145 |            80 |
+|         109 | Daniel     | Faviet    | DFAVIET   |      5154569 | 1987-06-26 |     10 |  9900.00 |           0.00 |        145 |            80 |
++-------------+------------+-----------+-----------+--------------+------------+--------+----------+----------------+------------+---------------+
+
+Q5. Write a SQL statement to change the email column of employees table with 'not
+available' for those employees whose department_id is 80 and gets a
+commission is less than .20%
+ans:-mysql> update employee set email='not avilable' where department_id=80
+    -> and commission_pct<0.20;
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> table employee
+    -> ;
++-------------+------------+-----------+--------------+--------------+------------+--------+----------+----------------+------------+---------------+
+| Employee_id | First_name | Last_name | Email        | Phone_number | Hire_date  | job_id | Salary   | commission_pct | Manager_id | department_id |
++-------------+------------+-----------+--------------+--------------+------------+--------+----------+----------------+------------+---------------+
+|         100 | Steveen    | king      | SKING;       |      5154567 | 1987-06-17 |      1 | 26400.00 |           0.00 |        200 |            10 |
+|         101 | Neena      | Kochhar   | NKOCHHAR;    |     12345678 | 1987-06-18 |      2 | 18700.00 |           0.00 |        200 |            10 |
+|         102 | Lex        | De Haan   | LDEHAAN      |      5154568 | 1987-06-19 |      3 | 18700.00 |           0.00 |        200 |            10 |
+|         103 | Alexander  | Hunold    | AHUNOLD      |      5094567 | 1987-06-20 |      4 |  9900.00 |           0.00 |        103 |            60 |
+|         104 | Bruce      | Ernst     | BERNST       |      5094568 | 1987-06-21 |      5 |  9900.00 |           0.00 |        103 |            60 |
+|         105 | David      | Austin    | DAUSTIN      |      5904569 | 1987-06-22 |      6 |  5280.00 |           0.00 |        103 |            60 |
+|         106 | Valli      | Pataballa | VPATABAL     |      5904560 | 1987-06-23 |      7 |  5280.00 |           0.00 |        103 |            60 |
+|         107 | Diana      | Lorentz   | DLORENTZ     |      5904567 | 1987-06-24 |      8 |  4620.00 |           0.00 |        114 |            30 |
+|         108 | Nancy      | Greenberg | not avilable |      5154569 | 1987-06-25 |      9 | 13200.00 |           0.00 |        145 |            80 |
+|         109 | Daniel     | Faviet    | not avilable |      5154569 | 1987-06-26 |     10 |  9900.00 |           0.00 |        145 |            80 |
++-------------+------------+-----------+--------------+--------------+------------+--------+----------+----------------+------------+---------------+
+
+Q6. Write a SQL statement to change the email column of employees table with 'not
+available' for those employees who belongs to the 'Purchasing' department.
+
+Ans:-
+
+
+
+
+
+Q7. Write a SQL statement to change the email and commission_pct column of
+employees table with 'not available' and 0.10 for all employees.
+
+Ans:-mysql> update employee set email='not available',
+    -> commission_pct=0.10;
+Query OK, 10 rows affected (0.01 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> table employee;
++-------------+------------+-----------+---------------+--------------+------------+--------+----------+----------------+------------+---------------+
+| Employee_id | First_name | Last_name | Email         | Phone_number | Hire_date  | job_id | Salary   | commission_pct | Manager_id | department_id |
++-------------+------------+-----------+---------------+--------------+------------+--------+----------+----------------+------------+---------------+
+|         100 | Steveen    | king      | not available |      5154567 | 1987-06-17 |      1 | 26400.00 |           0.10 |        200 |            10 |
+|         101 | Neena      | Kochhar   | not available |     12345678 | 1987-06-18 |      2 | 18700.00 |           0.10 |        200 |            10 |
+|         102 | Lex        | De Haan   | not available |      5154568 | 1987-06-19 |      3 | 18700.00 |           0.10 |        200 |            10 |
+|         103 | Alexander  | Hunold    | not available |      5094567 | 1987-06-20 |      4 |  9900.00 |           0.10 |        103 |            60 |
+|         104 | Bruce      | Ernst     | not available |      5094568 | 1987-06-21 |      5 |  9900.00 |           0.10 |        103 |            60 |
+|         105 | David      | Austin    | not available |      5904569 | 1987-06-22 |      6 |  5280.00 |           0.10 |        103 |            60 |
+|         106 | Valli      | Pataballa | not available |      5904560 | 1987-06-23 |      7 |  5280.00 |           0.10 |        103 |            60 |
+|         107 | Diana      | Lorentz   | not available |      5904567 | 1987-06-24 |      8 |  4620.00 |           0.10 |        114 |            30 |
+|         108 | Nancy      | Greenberg | not available |      5154569 | 1987-06-25 |      9 | 13200.00 |           0.10 |        145 |            80 |
+|         109 | Daniel     | Faviet    | not available |      5154569 | 1987-06-26 |     10 |  9900.00 |           0.10 |        145 |            80 |
++-------------+------------+-----------+---------------+--------------+------------+--------+----------+----------------+------------+---------------+
+ 

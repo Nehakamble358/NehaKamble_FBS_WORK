@@ -1,0 +1,122 @@
+#### &nbsp;                                     **                                                                                                                             Assignment -1**
+
+Q1.Room Booking - Customers would be booking the rooms with online 
+
+portal. They are required to register themselves with 
+
+email id prior to book the rooms - Rooms would be having different type (Basic, Luxury) 
+
+and have specific rent. 
+
+Ans:- mysql> create table Room\_Booking
+
+&nbsp;   -> (Booking\_id int,Customer\_id int,Room\_no int,Room\_type varchar(20),Rent\_per\_day decimal(10,2),Checkin\_Date Date,CheckOut\_Date Date);
+
+Query OK, 0 rows affected (0.05 sec)  
+
+mysql> desc room\_booking;
+
++---------------+---------------+------+-----+---------+-------+
+
+| Field         | Type          | Null | Key | Default | Extra |
+
++---------------+---------------+------+-----+---------+-------+
+
+| Booking\_id    | int           | YES  |     | NULL    |       |
+
+| Customer\_id   | int           | YES  |     | NULL    |       |
+
+| Room\_no       | int           | YES  |     | NULL    |       |
+
+| Room\_type     | varchar(20)   | YES  |     | NULL    |       |
+
+| Rent\_per\_day  | decimal(10,2) | YES  |     | NULL    |       |
+
+| Checkin\_Date  | date          | YES  |     | NULL    |       |
+
+| CheckOut\_Date | date          | YES  |     | NULL    |       |
+
++---------------+---------------+------+-----+---------+-------+  
+
+
+
+Q2.Service management - Customers would be availing the services like food, 
+
+laundry, site visits - Food services would be charged based upon selection 
+
+of food from menu. - laundry services would be charged as Rs20/cloth - Site visits would offer specific rates on the basis of per 
+
+day charges and selection of vehicle 
+
+&nbsp;
+
+Ans:-mysql> create table service\_managment
+
+&nbsp;   -> (service\_id int,Booking\_id int,service\_type varchar(50), Quntity int,Rent\_per\_unit decimal(10,2),Totale\_Amount decimal(10,2))
+
+&nbsp;   -> ;
+
+Query OK, 0 rows affected (0.04 sec)
+
+
+
+mysql> desc service\_managment;
+
++---------------+---------------+------+-----+---------+-------+
+
+| Field         | Type          | Null | Key | Default | Extra |
+
++---------------+---------------+------+-----+---------+-------+
+
+| service\_id    | int           | YES  |     | NULL    |       |
+
+| Booking\_id    | int           | YES  |     | NULL    |       |
+
+| service\_type  | varchar(50)   | YES  |     | NULL    |       |
+
+| Quntity       | int           | YES  |     | NULL    |       |
+
+| Rent\_per\_unit | decimal(10,2) | YES  |     | NULL    |       |
+
+| Totale\_Amount | decimal(10,2) | YES  |     | NULL    |       |
+
++---------------+---------------+------+-----+---------+-------+
+
+
+
+Q3Invoice management - Invoice generatio
+
+Ans:-mysql> create  table table\_managnemt
+
+&nbsp;   -> (invoice\_id int, Booking\_id int,Total\_Room\_Rent decimal(10,2),Total\_service\_charges decimal (10,2),Grand\_Total decimal(10,2),invoice\_Date Date);
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc table\_managnemt;
+
++-----------------------+---------------+------+-----+---------+-------+
+
+| Field                 | Type          | Null | Key | Default | Extra |
+
++-----------------------+---------------+------+-----+---------+-------+
+
+| invoice\_id            | int           | YES  |     | NULL    |       |
+
+| Booking\_id            | int           | YES  |     | NULL    |       |
+
+| Total\_Room\_Rent       | decimal(10,2) | YES  |     | NULL    |       |
+
+| Total\_service\_charges | decimal(10,2) | YES  |     | NULL    |       |
+
+| Grand\_Total           | decimal(10,2) | YES  |     | NULL    |       |
+
+| invoice\_Date          | date          | YES  |     | NULL    |       |
+
++-----------------------+---------------+------+-----+---------+-------+
+
+
+
+
+
+&nbsp;                                                                                                                                                                                                                                                                                                                 
+

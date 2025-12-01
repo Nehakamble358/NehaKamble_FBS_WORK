@@ -1,0 +1,21 @@
+//3.print perfect number in the given range 1 to n
+# include<stdio.h>
+void main()
+{
+	int number, rem, sum=0, i;
+	printf("Enter a Number :");
+	scanf("%d",&number);
+	for(i=1; i <=(number -1); i++)
+	{
+		rem = number % i;
+		if(rem == 0)
+		{
+			sum = sum + i;
+		}
+	}
+	if(sum == number)
+	printf("%d is perfect number",number);
+	else
+	printf("%d is not a perfect number",number);
+}
+	

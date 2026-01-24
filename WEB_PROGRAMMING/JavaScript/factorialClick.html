@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.getElementById("factbtn").addEventListener("click", function () {
+                let num = parseInt(document.getElementById("inp1").value);
+                let fact = 1;
+
+                for (let i = 1; i <= num; i++) {
+                    fact = fact * i;
+                }
+
+                document.getElementById("op").innerHTML = "Factorial is: " + fact;
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    Enter Number <input type="text" id="inp1">
+    <br><br>
+    <button id="factbtn">Factorial</button>
+    <br><br>
+    <span id="op"></span>
+</body>
+</html>

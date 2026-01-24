@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Number Program</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e02020, #2864c4);
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 380px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #210208;
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #07010e;
+            transform: scale(1.05);
+        }
+
+        #op {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+    <script>
+        function reverseNum() {
+            num = parseInt(document.getElementById("inp1").value);
+            rev = 0;
+
+            while (num > 0) {
+                rem = num % 10;
+                rev = rev * 10 + rem;
+                num = parseInt(num / 10);
+            }
+            document.getElementById("op").innerHTML = "Reverse : " + rev;
+        }
+
+        function palindrome() {
+            num = parseInt(document.getElementById("inp1").value);
+            temp = num;
+            rev = 0;
+
+            while (num > 0) {
+                rem = num % 10;
+                rev = rev * 10 + rem;
+                num = parseInt(num / 10);
+            }
+
+            if (temp == rev)
+                document.getElementById("op").innerHTML = "Palindrome Number";
+            else
+                document.getElementById("op").innerHTML = "Not Palindrome";
+        }
+
+        function armstrong() {
+            num = parseInt(document.getElementById("inp1").value);
+            temp = num;
+            sum = 0;
+
+            while (num > 0) {
+                rem = num % 10;
+                sum = sum + rem * rem * rem;
+                num = parseInt(num / 10);
+            }
+
+            if (temp == sum)
+                document.getElementById("op").innerHTML = "Armstrong Number";
+            else
+                document.getElementById("op").innerHTML = "Not Armstrong";
+        }
+
+        function prime() {
+            num = parseInt(document.getElementById("inp1").value);
+            count = 0;
+
+            for (i = 1; i <= num; i++) {
+                if (num % i == 0)
+                    count++;
+            }
+
+            if (count == 2)
+                document.getElementById("op").innerHTML = "Prime Number";
+            else
+                document.getElementById("op").innerHTML = "Not Prime";
+        }
+
+        function strong() {
+            num = parseInt(document.getElementById("inp1").value);
+            temp = num;
+            sum = 0;
+
+            while (num > 0) {
+                rem = num % 10;
+                fact = 1;
+
+                for (i = 1; i <= rem; i++) {
+                    fact = fact * i;
+                }
+
+                sum = sum + fact;
+                num = parseInt(num / 10);
+            }
+
+            if (temp == sum)
+                document.getElementById("op").innerHTML = "Strong Number";
+            else
+                document.getElementById("op").innerHTML = "Not Strong";
+        }
+    </script>
+    
+</head>
+<body>
+    <div class ="box">
+        <h2>Number Programs</h2>
+     <input type="text" id="inp1" placeholder="Enter Number">
+    <div>
+    <button onclick="reverseNum()">Reverse</button>
+    <button onclick="palindrome()">Palindrome</button>
+    <button onclick="armstrong()">Armstrong</button>
+    <button onclick="prime()">Prime</button>
+    <button onclick="strong()">Strong</button>
+    </div>
+    <span id ="op"></span>
+    </div>
+</body>
+</html>

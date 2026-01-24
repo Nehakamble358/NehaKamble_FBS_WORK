@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image Swap</title>
+   <style>
+   <style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+        font-family:Arial;
+    }
+
+    .gallery{
+        background:#fff;
+        padding:25px;
+        width:820px;
+        border-radius:20px;
+        box-shadow:0 25px 40px rgba(0,0,0,0.3);
+    }
+
+    /* ONE BIG BOX */
+    .all-images{
+        border:4px solid #4a69bd;
+        border-radius:15px;
+        padding:15px;
+        display:flex;
+        justify-content:flex-start; /* 👈 SAME SIDE */
+        gap:15px;
+    }
+
+    /* SAME SIZE FOR ALL IMAGES */
+    .all-images img{
+        width:140px;
+        height:100px;
+        object-fit:cover;
+        border-radius:10px;
+        border:3px solid #60a3bc;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .all-images img:hover{
+        transform:translateY(-6px) scale(1.05);
+        box-shadow:0 10px 20px rgba(0,0,0,0.3);
+        border-color:#1e3799;
+    }
+</style>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let images = document.getElementsByClassName("image");
+
+            for (let i = 0; i < images.length; i++) {
+                images[i].addEventListener("click", function () {
+
+                    let temp = document.getElementById("dest").src;
+                    document.getElementById("dest").src = this.src;
+                    this.src = temp;
+
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+   
+    <div class="gallery">
+        <img src="/images/images.jpg" id="dest">
+    </div>
+
+  
+    <div class="thumbs">
+        <img src="/images/imgs.jpg" class="image">
+        <img src="/images/imgcss.jpg" class="image">
+        <img src="/images/postinsta.jpg" class="image">
+        <img src="/images/imgc.jpg"class="image">
+    </div>
+
+</body>
+</html>

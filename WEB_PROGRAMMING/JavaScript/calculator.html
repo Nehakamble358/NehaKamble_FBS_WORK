@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Calculator</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        width: 350px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .calculator h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        background: #667eea;
+        color: white;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #5a67d8;
+        transform: scale(1.05);
+    }
+
+    .output {
+        margin-top: 20px;
+        padding: 12px;
+        background: #f1f1f1;
+        border-radius: 6px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Calculator</h2>
+
+    <div class="input-group">
+        <label>Enter Num1</label>
+        <input type="number" id="num1">
+    </div>
+
+    <div class="input-group">
+        <label>Enter Num2</label>
+        <input type="number" id="num2">
+    </div>
+
+    <div class="buttons">
+        <button onclick="calc('+')">Add</button>
+        <button onclick="calc('-')">Sub</button>
+        <button onclick="calc('*')">Mul</button>
+        <button onclick="calc('/')">Div</button>
+    </div>
+
+    <div class="output" id="result">
+        Output will be here
+    </div>
+</div>
+
+<script>
+    function calc(op) {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        let res = 0;
+
+        if (op === '+') res = a + b;
+        if (op === '-') res = a - b;
+        if (op === '*') res = a * b;
+        if (op === '/') res = b !== 0 ? a / b : "Cannot divide by 0";
+
+        document.getElementById("result").innerText = "Result: " + res;
+    }
+</script>
+
+</body>
+</html>

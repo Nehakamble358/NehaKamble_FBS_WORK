@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Tables</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .box {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .green {
+            background: #2ecc71;
+        }
+
+        .yellow {
+            background: #f1c40f;
+        }
+    </style>
+
+    <script>
+        function printTable() {
+            start = parseInt(document.getElementById("start").value);
+            end = parseInt(document.getElementById("end").value);
+
+            str = "";
+
+            for (n = start; n <= end; n++) {
+                if (n % 2 == 0)
+                    str += '<div class="box green">';
+                else
+                    str += '<div class="box yellow">';
+
+                for (i = 1; i <= 10; i++) {
+                    str += n + " × " + i + " = " + (n * i) + "<br>";
+                }
+
+                str += "</div>";
+            }
+
+            document.getElementById("op").innerHTML = str;
+        }
+    </script>
+</head>
+
+<body>
+    Enter start
+    <input type="text" id="start">
+
+    Enter end
+    <input type="text" id="end">
+
+    <button onclick="printTable()">Print Table</button>
+
+    <div class="container" id="op"></div>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bank Management System</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0f172a;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --muted: #64748b;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --warning: #f59e0b;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #e0e7ff, #f8fafc);
+      min-height: 100vh;
+      color: var(--secondary);
+    }
+
+    /* Header */
+    header {
+      background: var(--secondary);
+      color: #fff;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Layout */
+    .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .menu button {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #f1f5f9;
+      color: var(--secondary);
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .menu button:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Main Content */
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--secondary);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #cbd5f5;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn.secondary {
+      background: #334155;
+    }
+
+    .btn.success {
+      background: var(--success);
+    }
+
+    .btn.danger {
+      background: var(--danger);
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    table thead {
+      background: #f1f5f9;
+    }
+
+    table th,
+    table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      color: #fff;
+    }
+
+    .badge.credit { background: var(--success); }
+    .badge.debit { background: var(--danger); }
+
+    /* Footer */
+    footer {
+      margin-top: 30px;
+      padding: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🏦 Bank Management System</h1>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Accounts</a>
+      <a href="#">Reports</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <div class="menu">
+        <button>Create Account</button>
+        <button>Deposit</button>
+        <button>Withdraw</button>
+        <button>Transactions</button>
+        <button>Check Balance</button>
+        <button>Loan Interest</button>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <section class="content">
+
+      <!-- Create Account Card -->
+      <div class="card">
+        <h3>Create Account</h3>
+        <div class="form-group">
+          <label>Account Type</label>
+          <select>
+            <option>Saving</option>
+            <option>Current</option>
+            <option>Salary</option>
+            <option>Loan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Owner Name</label>
+          <input type="text" placeholder="Enter name" />
+        </div>
+        <div class="form-group">
+          <label>Opening Balance / Loan Amount</label>
+          <input type="number" placeholder="Amount" />
+        </div>
+        <button class="btn">Create Account</button>
+      </div>
+
+      <!-- Deposit / Withdraw Card -->
+      <div class="card">
+        <h3>Deposit / Withdraw</h3>
+        <div class="form-group">
+          <label>Account Number</label>
+          <input type="text" placeholder="Account No" />
+        </div>
+        <div class="form-group">
+          <label>Amount</label>
+          <input type="number" placeholder="Amount" />
+        </div>
+        <button class="btn success">Deposit</button>
+        <button class="btn danger">Withdraw</button>
+      </div>
+
+      <!-- Transactions Card -->
+      <div class="card">
+        <h3>Recent Transactions</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12-01-2026</td>
+              <td>Credit</td>
+              <td>₹5000</td>
+              <td><span class="badge credit">SUCCESS</span></td>
+            </tr>
+            <tr>
+              <td>10-01-2026</td>
+              <td>Debit</td>
+              <td>₹2000</td>
+              <td><span class="badge debit">SUCCESS</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Balance Card -->
+      <div class="card">
+        <h3>Account Summary</h3>
+        <p><strong>Account No:</strong> 123456</p>
+        <p><strong>Owner:</strong> Neha Kamble</p>
+        <p><strong>Current Balance:</strong> ₹60,000</p>
+        <button class="btn secondary">Refresh</button>
+      </div>
+
+    </section>
+  </div>
+
+  <footer>
+     Bank Management System | UI Demo (HTML + CSS Only)
+  </footer>
+
+</body>
+</html>
+
+

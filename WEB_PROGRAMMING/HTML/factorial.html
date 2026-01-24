@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>document</title>
+
+
+    <script>
+        
+    function factorial()
+    {
+        num = parseInt(document.getElementById("inp1").value) 
+       fact=1
+       for(i=1;i<=num;i++)
+       fact=fact*i
+
+       document.getElementById("op").innerHTML="Factorial is :"+fact
+    }
+    </script>
+</head>
+<body>
+    Enter Number <input tpye="text" id="inp1">
+    <br>
+    <button onclick="factorial()">Factorial</button><br>
+    <span id="op"></span>
+</body>
+</html>

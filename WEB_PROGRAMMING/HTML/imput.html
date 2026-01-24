@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+        }
+
+        .box{
+            width:380px;
+            margin:90px auto;
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        h2{
+            text-align:center;
+            color:#ff5e62;
+        }
+
+        label{
+            display:block;
+            margin-top:12px;
+            font-weight:bold;
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            border-radius:10px;
+            border:1px solid #ccc;
+            font-size:14px;
+        }
+
+        .gender{
+            margin-top:8px;
+        }
+
+        .gender input{
+            width:auto;
+        }
+
+        input[type="submit"]{
+            margin-top:20px;
+            background:#ff5e62;
+            color:white;
+            border:none;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        input[type="submit"]:hover{
+            background:#ff9966;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Registration Form</h2>
+
+    <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter full name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+
+        <label>Mobile Number</label>
+        <input type="number" placeholder="Enter mobile number" required>
+
+        <label>Gender</label>
+        <div class="gender">
+            <input type="radio" name="g"> Male
+            <input type="radio" name="g"> Female
+            <input>
+        </div>
+
+        <label>City</label>
+        <select>
+            <option>Select City</option>
+            <option>Pune</option>
+            <option>Mumbai</option>
+            <option>Nagpur</option>
+            <option>Akola</option>
+            <option>Hyderabad</option>
+            <option>Bangalore</option>
+        </select>
+
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+</body>
+</html>

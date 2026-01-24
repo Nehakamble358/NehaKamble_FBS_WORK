@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>image</title>
+</head>
+<style>
+   .postcontainer{
+    width: 300px;
+    border: 2px solid lightblue;
+    margin: auto;
+    padding: 10px;
+    border-radius: 50px;
+   }
+   .postheader{
+    display: flex;
+    justify-content: space-between;
+   }
+   .subpostheader{
+    display: flex;
+    gap: 10px;
+   }
+   .postmid{
+    width: 100%;
+   }
+   .postmid img{
+    width: 100%;
+   }
+   .dp{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid green;
+    overflow: hidden;
+  
+   }
+   .dp img{
+    width: 100%;
+    object-fit:cover;
+    /* height: 100%; */
+   }
+   .subfooter{
+    display: flex;
+    justify-content: space-between;
+   }
+   .unameloc b{
+    display: block;
+   }
+   .unameloc b{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+   }
+   .scrollstories{
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+}
+
+.scrollstories::-webkit-scrollbar{
+    display: none;
+}
+
+.stories{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid #ff0066;
+     overflow-x: auto;    
+    overflow-y: hidden;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.stories img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/* hide checkbox */
+#like{
+    display: none;
+}
+
+/* default heart (white) */
+.heart::before{
+    content: "🤍";
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* when clicked (checked) */
+#like:checked + .heart::before{
+    content: "❤️";
+}
+
+.soft{
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.soft:hover{
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+.postmid{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.postmid img{
+    min-width: 100%;
+    scroll-snap-align: start;
+}
+
+.postmid::-webkit-scrollbar{
+    display: none;
+}
+
+</style>
+<body>
+    <div class="scrollstories">
+        <div class="stories">
+        <img src="/images/imgcss.jpg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.56 AM.jpeg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.54 AM (1).jpeg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.54 AM.jpeg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM (1).jpeg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM (2).jpeg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.56 AM (1).jpeg" alt="">
+        </div>
+        <div class="stories">
+        <img src="/images/WhatsApp Image 2026-01-05 at 12.24.56 AM.jpeg" alt="">
+        </div>
+    </div>
+    <div class="postcontainer">
+        <div class="postheader">
+            <div class="subpostheader">
+                <div class="dp">
+                <img src="/images/WhatsApp Image 2026-01-05 at 12.20.22 AM.jpeg" alt="">
+            </div>
+            <div class="unameloc">
+                <b>Username</b>
+                <b>Location</b>
+            </div>
+            </div>
+            <div><b>...</b></div>
+        </div>
+        <div class="postmid">
+            <img src="/images/WhatsApp Image 2026-01-05 at 12.20.22 AM.jpeg" alt="">
+        </div>
+        <div class="footer">
+            <div class="post-icons">
+    <input type="checkbox" id="like">
+    <label for="like" class="heart"></label>
+    <div class="li-action">💬 Comment</div>
+    <span class="li-action">📤Share</span>
+    </div>
+
+    <div class="postmid">
+    <span class="reel-icon">▶</span>
+
+    <img src="/images/WhatsApp Image 2026-01-05 at 12.24.56 AM.jpeg" alt="">
+    <img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM.jpeg" alt="">
+    <img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM (1).jpeg" alt="">
+    </div>
+
+            <div class="caption">
+                <b>Liked by XYZ and 12 others..</b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quis corrupti dolor sunt? Vel, iure saepe sit tenetur est sed dolorum voluptatibus, molestias qui eum non, tempore omnis voluptatum! In!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

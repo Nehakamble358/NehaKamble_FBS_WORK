@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instagram Mobile White</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+body{
+    background:#eaeaea;
+    display:flex;
+    justify-content:center;
+    padding:20px 0;
+}
+
+/* Mobile Container */
+.mobile{
+    width:360px;
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+/* Top Bar */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.username{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.icons{
+    font-size:18px;
+}
+
+/* Profile */
+.profile{
+    display:flex;
+    padding:15px;
+}
+
+.profile-pic{
+    position:relative;
+}
+
+.profile-pic img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+
+.note{
+    position:absolute;
+    top:-8px;
+    left:5px;
+    background:#f1f1f1;
+    padding:3px 6px;
+    font-size:10px;
+    border-radius:12px;
+    border:1px solid #ccc;
+}
+
+.stats{
+    display:flex;
+    gap:18px;
+    margin-left:15px;
+    margin-top:18px;
+    font-size:13px;
+}
+
+.stats div{
+    text-align:center;
+}
+
+/* Bio */
+.bio{
+    padding:0 15px;
+    font-size:13px;
+}
+
+.bio p{
+    margin:3px 0;
+}
+
+/* Buttons */
+.buttons{
+    display:flex;
+    gap:8px;
+    padding:12px 15px;
+}
+
+.buttons button{
+    flex:1;
+    padding:6px;
+    border:1px solid #ccc;
+    background:#f5f5f5;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* Highlights */
+.highlights{
+    display:flex;
+    gap:12px;
+    padding:10px 15px;
+}
+
+.highlight{
+    text-align:center;
+    font-size:11px;
+}
+
+.highlight div{
+    width:55px;
+    height:55px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    margin-bottom:4px;
+}
+
+/* Tabs */
+.tabs{
+    display:flex;
+    justify-content:space-around;
+    padding:8px 0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    font-size:16px;
+}
+
+/* Posts */
+.posts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+}
+
+.post{
+    position:relative;
+}
+
+.post img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+
+.reel{
+    position:absolute;
+    top:4px;
+    right:4px;
+    font-size:11px;
+    background:rgba(0,0,0,0.6);
+    color:#fff;
+    padding:2px 4px;
+    border-radius:4px;
+}
+
+/* Bottom Nav */
+.bottom-nav{
+    display:flex;
+    justify-content:space-around;
+    padding:8px 0;
+    border-top:1px solid #ddd;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="mobile">
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="username">nehakamble6361 ⌄</div>
+        <div class="icons">＋ ☰</div>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile">
+        <div class="profile-pic">
+            <div class="note">Share a note</div>
+            <img src="/images/WhatsApp Image 2026-01-05 at 12.20.22 AM.jpeg">
+        </div>
+
+        <div class="stats">
+            <div><b>6</b><br>posts</div>
+            <div><b>663</b><br>followers</div>
+            <div><b>158</b><br>following</div>
+        </div>
+    </div>
+
+    <!-- Bio -->
+    <div class="bio">
+        <p><b>it's_Neha_07</b></p>
+        <p>Never give up ✨</p>
+        <p>Don't tell people your dream</p>
+        <p>show them 👑😎</p>
+        <p>success is my only option</p>
+        <p>failure is not.? 🥰</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button>Edit profile</button>
+        <button>Share profile</button>
+        <button>👤+</button>
+    </div>
+
+    <!-- Highlights -->
+    <div class="highlights">
+        <div class="highlight"><div></div>New</div>
+        <div class="highlight"><div></div>meri duniya</div>
+        <div class="highlight"><div></div>saree</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        ⬛ ▶ 🔄 👤
+    </div>
+
+    <!-- Posts -->
+    <div class="posts">
+        <div class="post"><span class="reel">▶</span><img src="/images/WhatsApp Image 2026-01-05 at 12.24.54 AM (1).jpeg"></div>
+        <div class="post"><span class="reel">▶</span><img src="/images/WhatsApp Image 2026-01-05 at 12.24.54 AM.jpeg"></div>
+        <div class="post"><img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM (1).jpeg"></div>
+        <div class="post"><img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM (2).jpeg"></div>
+        <div class="post"><img src="/images/WhatsApp Image 2026-01-05 at 12.24.55 AM.jpeg"></div>
+        <div class="post"><img src="/images/WhatsApp Image 2026-01-05 at 12.24.56 AM (1).jpeg"></div>
+    </div>
+
+    <!-- Bottom Nav -->
+    <div class="bottom-nav">
+        🏠 🔍 ➕ ▶ 👤
+    </div>
+
+</div>
+
+</body>
+</html>
